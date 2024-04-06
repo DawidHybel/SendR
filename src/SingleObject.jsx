@@ -7,9 +7,32 @@ import objData from "./data.json";
 import { Link } from "react-router-dom";
 import BackArrow from "./icons/BackArrow";
 import LocationIcon from "./icons/LocationIcon";
+interface ObjectData {
+  properties: {
+    ID: number;
+    NAME: string;
+    MODIFIED_D: string;
+    AUTOR: string;
+    PHOTO: string;
+    PHOTO1: string;
+    PHOTO2: string;
+    PHOTO3: string;
+    PHOTO4: string;
+    PHOTO5: string;
+    PHOTO6: string;
+    ICON: string;
+    MODEL: string;
+    INFO: string;
+    CORDINATES: [number, number];
+    ID: number;
+  };
+  geometry: {
+    CORDINATES: [number, number];
+  };
+}
 const SingleObject = () => {
   const { id } = useParams();
-  const object = objData.features.find(
+  const object: ObjectData = objData.features.find(
     (obj) => String(obj.properties.ID) === id
   );
 
@@ -49,7 +72,7 @@ const SingleObject = () => {
     return <div>Nie znaleziono objectu o ID: {id}</div>;
   }
 
-  function Model(props) {
+  function Model(props: any) {
     const { scene } = useGLTF(object.properties.MODEL);
     return <primitive object={scene} {...props}></primitive>;
   }

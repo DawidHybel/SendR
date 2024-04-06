@@ -2,10 +2,11 @@ import NewPlace from "./icons/NewPlace";
 import AbadonPlace from "./icons/AbadonPlace";
 import Bike from "./icons/Bike";
 import AbadonCars from "./icons/AbadonCars";
-import { useRef } from "react";
+import { useRef, RefObject } from "react";
 import { Link } from "react-router-dom";
-const Navigation = () => {
-  const navRef = useRef();
+type NavigationProps = {};
+const Navigation: React.FC<NavigationProps> = () => {
+  const navRef: RefObject<HTMLDivElement> = useRef<HTMLDivElement>(null);
   return (
     <div className="navigation" ref={navRef}>
       <p className="navigation-title">Oznaczenia</p>
