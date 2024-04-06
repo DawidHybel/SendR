@@ -6,11 +6,11 @@ import {
   useLoadScript,
 } from "@react-google-maps/api";
 import MapStyle from "./MapStyle";
-import Test from "./Test";
+import MobileMenu from "./MobileMenu";
 import objData from "./data.json";
 import { Link } from "react-router-dom";
 import LocationIcon from "./icons/LocationIcon";
-function Mapa() {
+function Map() {
   const { isLoaded } = useLoadScript({
     googleMapsApiKey: process.env.REACT_APP_GOOGLE_MAPS_API_KEY,
   });
@@ -26,9 +26,9 @@ function Mapa() {
 
   return (
     <Fragment>
-      <div className="Mapa">
-        <div className="test-szerokosci">
-          <Test></Test>{" "}
+      <div className="Map">
+        <div className="full-width">
+          <MobileMenu></MobileMenu>{" "}
         </div>
         {isLoaded ? (
           <GoogleMap
@@ -42,24 +42,24 @@ function Mapa() {
               <MarkerF
                 key={obj.properties.ID}
                 position={{
-                  lat: obj.geometry.coordinates[0],
-                  lng: obj.geometry.coordinates[1],
+                  lat: obj.geometry.CORDINATES[0],
+                  lng: obj.geometry.CORDINATES[1],
                 }}
-                icon={obj.properties.IKONA}
+                icon={obj.properties.ICON}
                 onClick={() => handleActiveMarker(obj.properties.ID)}
               >
                 {activeMarker === obj.properties.ID ? (
                   <InfoWindowF onCloseClick={() => setActiveMarker(null)}>
-                    <div className="marker-test">
+                    <div className="location-marker">
                       <img
-                        className="marker-zdjecie"
-                        src={obj.properties.ZDJECIE}
+                        className="location-marker-photo"
+                        src={obj.properties.PHOTO}
                         alt={obj.properties.NAME}
                       ></img>
                       <div className="col-2">
                         <p className="marker-p">{`${obj.properties.NAME}`}</p>
 
-                        <div className="marker-wspol">
+                        <div className="marker-group">
                           <LocationIcon></LocationIcon>
                           <Link
                             className="goooglemaps-link"
@@ -67,15 +67,15 @@ function Mapa() {
                             target="_blank"
                             rel="noopener noreferrer"
                           >
-                            <p className="marker-pozycja">
-                              {obj.geometry.coordinates[1]} <br />
-                              {obj.geometry.coordinates[0]}
+                            <p className="marker-cordinates">
+                              {obj.geometry.CORDINATES[1]} <br />
+                              {obj.geometry.CORDINATES[0]}
                             </p>{" "}
                           </Link>
                         </div>
-                        <div className="marker-wspol">
+                        <div className="marker-group">
                           <svg
-                            className="ikona-avatar"
+                            className="avatar-icon"
                             width="32"
                             height="32"
                             viewBox="0 0 32 40"
@@ -88,7 +88,10 @@ function Mapa() {
                             />
                           </svg>
 
-                          <p className="marker-imie"> {obj.properties.AUTOR}</p>
+                          <p className="marker-nickname">
+                            {" "}
+                            {obj.properties.AUTOR}
+                          </p>
                         </div>
 
                         <Link
@@ -109,4 +112,4 @@ function Mapa() {
     </Fragment>
   );
 }
-export default Mapa;
+export default Map;

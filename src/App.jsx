@@ -1,13 +1,12 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { HashRouter as Router, Route, Routes } from "react-router-dom"; // Dodany import
+import { HashRouter as Router, Route, Routes } from "react-router-dom";
 import "./App.css";
 import Mapa from "./Mapa";
-import Test from "./Test";
-import Obiekt from "./Obiekt";
-import GaleriaObiektow from "./GaleriaObiektow";
-import Ciekawostki from "./ciekawostki";
-import Formularz from "./Dodajswojobiekt";
+import SingleObject from "./SingleObject";
+import GroupObjects from "./GroupObjects";
+import Interestings from "./Interestings";
+import Form from "./Form";
 
 function Home() {
   return (
@@ -52,11 +51,10 @@ function App() {
       <Routes>
         <Route path="/" element={<Home />} />
         <Route path="mapa" element={<Mapa />} />
-        <Route path="Test" element={<Test />} />
-        <Route path="galeria-obiektow" element={<GaleriaObiektow />} />
-        <Route path="galeria-obiektow/:id" element={<Obiekt />} />
-        <Route path="ciekawostki" element={<Ciekawostki />} />
-        <Route path="dodaj-swoj-obiekt" element={<Formularz />} />
+        <Route path="galeria-obiektow" element={<GroupObjects />} />
+        <Route path="galeria-obiektow/:id" element={<SingleObject />} />
+        <Route path="ciekawostki" element={<Interestings />} />
+        <Route path="dodaj-swoj-obiekt" element={<Form />} />
       </Routes>
     </Router>
   );

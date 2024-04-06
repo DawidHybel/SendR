@@ -12,21 +12,21 @@
         "NAME": "Auto Sierpowa",
         "MODIFIED_D": "2018/01/18",
         "AUTOR": "kuba.nowacki@gmail.com",
-        "ZDJECIE": "./auto-test.jpg",
-        "ZDJECIE1": "./lic001.jpg",
-        "ZDJECIE2": "./lic002.jpg",
-        "ZDJECIE3": "./lic003.jpg",
-        "ZDJECIE4": "./lic004.jpg",
-        "ZDJECIE5": "./lic005.jpg",
-        "ZDJECIE6": "./lic006.jpg",
-        "IKONA": "./AbadonCar.png",
+        "PHOTO": "./auto-test.jpg",
+        "PHOTO1": "./lic001.jpg",
+        "PHOTO2": "./lic002.jpg",
+        "PHOTO3": "./lic003.jpg",
+        "PHOTO4": "./lic004.jpg",
+        "PHOTO5": "./lic005.jpg",
+        "PHOTO6": "./lic006.jpg",
+        "ICON": "./AbadonCar.png",
         "MODEL": "./auto.glb",
         "INFO": "metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat l",
         "CORDINATES": "https://maps.app.goo.gl/QM5Ezx5tRPvrpF988"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [50.06388987068865, 19.98955871178851]
+        "CORDINATES": [50.06388987068865, 19.98955871178851]
       }
     },
     {
@@ -36,21 +36,21 @@
         "NAME": "Rower Azory",
         "MODIFIED_D": "2018/01/18",
         "AUTOR": "kuba.nowacki@gmail.com",
-        "ZDJECIE": "./rower_azory.jpg",
-        "ZDJECIE1": "./lic001.jpg",
-        "ZDJECIE2": "./lic002.jpg",
-        "ZDJECIE3": "./lic003.jpg",
-        "ZDJECIE4": "./lic004.jpg",
-        "ZDJECIE5": "./lic005.jpg",
-        "ZDJECIE6": "./lic006.jpg",
-        "IKONA": "./NewObject.png",
+        "PHOTO": "./rower_azory.jpg",
+        "PHOTO1": "./lic001.jpg",
+        "PHOTO2": "./lic002.jpg",
+        "PHOTO3": "./lic003.jpg",
+        "PHOTO4": "./lic004.jpg",
+        "PHOTO5": "./lic005.jpg",
+        "PHOTO6": "./lic006.jpg",
+        "ICON": "./NewObject.png",
         "MODEL": "./rower-azory.glb",
         "INFO": "orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,",
         "CORDINATES": "https://maps.app.goo.gl/H3BggfwVYnTNYSqC6"
       },
       "geometry": {
         "type": "Point",
-        "coordinates": [50.08946101836022, 19.916087986275308]
+        "CORDINATES": [50.08946101836022, 19.916087986275308]
       }
     }
   ],
@@ -60,11 +60,11 @@
       "ZMIENNE": {
         "ID": 1,
         "TYT": "Ciekawostka 1",
-        "ZDJECIE": "./lic006.jpg",
+        "PHOTO": "./lic006.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",
-        "CSSKLAS": "Ciekawostka1"
+        "CSSKLAS": "interestings-one"
       }
     },
     {
@@ -72,11 +72,11 @@
       "ZMIENNE": {
         "ID": 2,
         "TYT": "Ciekawostka 2",
-        "ZDJECIE": "./lic006.jpg",
+        "PHOTO": "./lic006.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",
-        "CSSKLAS": "Ciekawostka2"
+        "CSSKLAS": "interestings-two"
       }
     },
     {
@@ -84,11 +84,11 @@
       "ZMIENNE": {
         "ID": 3,
         "TYT": "Ciekawostka 3",
-        "ZDJECIE": "./lic006.jpg",
+        "PHOTO": "./lic006.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",
-        "CSSKLAS": "Ciekawostka1"
+        "CSSKLAS": "interestings-one"
       }
     }
   ]

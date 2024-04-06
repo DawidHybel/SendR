@@ -1,10 +1,10 @@
 import objData from "./data.json";
 import BackArrow from "./icons/BackArrow";
-const Ciekawostki = () => {
+const Interestings = () => {
   return (
     <div>
       <BackArrow />
-      <div className="padding-left-h1">
+      <div className="padding-left-extra">
         <h1>Ciekawostki</h1>
       </div>
       {objData.CIEKAWOSTKI.map((obj) => {
@@ -12,12 +12,12 @@ const Ciekawostki = () => {
           <div className={obj.ZMIENNE.CSSKLAS} key={obj.ZMIENNE.ID}>
             <img
               className="img-sqr"
-              src={obj.ZMIENNE.ZDJECIE}
+              src={obj.ZMIENNE.PHOTO}
               alt="zdjecie"
             ></img>
-            <div className="ciekawostka-tekst">
-              <h1 className="ciekawostki-h1"> {obj.ZMIENNE.TYT}</h1>
-              <p className="Padding-left">{obj.ZMIENNE.TRESC}</p>
+            <div>
+              <h1> {obj.ZMIENNE.TYT}</h1>
+              <p>{obj.ZMIENNE.TRESC}</p>
               <h2>{obj.ZMIENNE.PODTYT}</h2>
               <h3>{obj.ZMIENNE.LICZBA}</h3>
             </div>
@@ -28,4 +28,4 @@ const Ciekawostki = () => {
   );
 };
 
-export default Ciekawostki;
+export default Interestings;

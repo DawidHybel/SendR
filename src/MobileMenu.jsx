@@ -1,6 +1,6 @@
-import Legenda from "./Legenda";
+import Navigation from "./Navigation";
 import { useState } from "react";
-const Test = () => {
+const MobileMenu = () => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -45,10 +45,10 @@ const Test = () => {
         )}
       </div>
       <div className={`mobile-menu ${showMenu ? "show" : ""}`}>
-        <Legenda></Legenda>
+        <Navigation></Navigation>
       </div>
     </div>
   );
 };
 
-export default Test;
+export default MobileMenu;

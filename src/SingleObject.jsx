@@ -7,14 +7,14 @@ import objData from "./data.json";
 import { Link } from "react-router-dom";
 import BackArrow from "./icons/BackArrow";
 import LocationIcon from "./icons/LocationIcon";
-const Obiekt = () => {
+const SingleObject = () => {
   const { id } = useParams();
-  const obiekt = objData.features.find(
+  const object = objData.features.find(
     (obj) => String(obj.properties.ID) === id
   );
 
   useEffect(() => {
-    if (!obiekt) {
+    if (!object) {
       return;
     }
 
@@ -43,14 +43,14 @@ const Obiekt = () => {
       window.removeEventListener("touchstart", handleMouseDown);
       window.removeEventListener("touchend", handleMouseUp);
     };
-  }, [obiekt]);
+  }, [object]);
 
-  if (!obiekt) {
-    return <div>Nie znaleziono obiektu o ID: {id}</div>;
+  if (!object) {
+    return <div>Nie znaleziono objectu o ID: {id}</div>;
   }
 
   function Model(props) {
-    const { scene } = useGLTF(obiekt.properties.MODEL);
+    const { scene } = useGLTF(object.properties.MODEL);
     return <primitive object={scene} {...props}></primitive>;
   }
 
@@ -67,19 +67,21 @@ const Obiekt = () => {
     <div className="parent">
       <BackArrow />
       <div className="col-1">
-        <div className="marker-wspol">
-          <h1 className=" padding-lef padding-rig">{obiekt.properties.NAME}</h1>
+        <div className="marker-group">
+          <h1 className=" padding-left-extra padding-right-extra">
+            {object.properties.NAME}
+          </h1>
           <div className="icon-padding-left">
             <LocationIcon />
           </div>
           <Link
-            to={obiekt.properties.CORDINATES}
+            to={object.properties.CORDINATES}
             target="_blank"
             rel="noopener noreferrer"
           >
             <p>
-              {obiekt.geometry.coordinates[0]} <br />
-              {obiekt.geometry.coordinates[1]}
+              {object.geometry.CORDINATES[0]} <br />
+              {object.geometry.CORDINATES[1]}
             </p>
           </Link>
         </div>
@@ -107,37 +109,37 @@ const Obiekt = () => {
           </Suspense>
         </Canvas>
         <p className="click-alert">Naciśnij i przytrzymaj, aby przybliżyć</p>
-        <p className="obiekt-opis"> {obiekt.properties.INFO}</p>
+        <p className="object-description"> {object.properties.INFO}</p>
       </div>
-      <div className="galeria-obiekt" key={obiekt.properties.ID}>
+      <div className="photo-galery" key={object.properties.ID}>
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE1}
+          src={object.properties.PHOTO1}
           alt="zdjecie"
         />
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE2}
+          src={object.properties.PHOTO2}
           alt="zdjecie"
         />
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE3}
+          src={object.properties.PHOTO3}
           alt="zdjecie"
         />
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE4}
+          src={object.properties.PHOTO4}
           alt="zdjecie"
         />
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE5}
+          src={object.properties.PHOTO5}
           alt="zdjecie"
         />
         <img
           className="img-sqr small"
-          src={obiekt.properties.ZDJECIE6}
+          src={object.properties.PHOTO6}
           alt="zdjecie"
         />
       </div>
@@ -145,4 +147,4 @@ const Obiekt = () => {
   );
 };
 
-export default Obiekt;
+export default SingleObject;

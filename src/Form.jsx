@@ -2,7 +2,7 @@ import { useRef, useState } from "react";
 import emailjs from "@emailjs/browser";
 import BackArrow from "./icons/BackArrow";
 
-const Formularz = () => {
+const Form = () => {
   const form = useRef();
   const [formValid, setFormValid] = useState(false);
 
@@ -49,7 +49,7 @@ const Formularz = () => {
     <div className="">
       <BackArrow />
 
-      <h1 className="padding-left-h1">Dodaj swój obiekt</h1>
+      <h1 className="padding-left-extra">Dodaj swój obiekt</h1>
       <div className="formularz">
         <form ref={form} onSubmit={sendEmail} onChange={handleFormChange}>
           <label>Możesz podać swoje email, a uwzględnimy je w publikacji</label>
@@ -101,4 +101,4 @@ const Formularz = () => {
   );
 };
 
-export default Formularz;
+export default Form;

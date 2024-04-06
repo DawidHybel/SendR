@@ -4,28 +4,28 @@ import Bike from "./icons/Bike";
 import AbadonCars from "./icons/AbadonCars";
 import { useRef } from "react";
 import { Link } from "react-router-dom";
-const Legenda = () => {
+const Navigation = () => {
   const navRef = useRef();
   return (
-    <div className="legenda" ref={navRef}>
-      <p className="legenda-title">Oznaczenia</p>
-      <div className="legenda-sekcja">
+    <div className="navigation" ref={navRef}>
+      <p className="navigation-title">Oznaczenia</p>
+      <div className="navigation-section">
         <Bike />
-        <p className="legenda-p">Zapomniane rowery</p>
+        <p className="navigation-p">Zapomniane rowery</p>
       </div>
-      <div className="legenda-sekcja">
+      <div className="navigation-section">
         <AbadonPlace />
-        <p className="legenda-p">Zapomniane miejsca</p>
+        <p className="navigation-p">Zapomniane miejsca</p>
       </div>
-      <div className="legenda-sekcja">
+      <div className="navigation-section">
         <AbadonCars />
-        <p className="legenda-p">Zapomniane samochody</p>
+        <p className="navigation-p">Zapomniane samochody</p>
       </div>
-      <div className="legenda-sekcja">
+      <div className="navigation-section">
         <NewPlace />
-        <p className="legenda-p">Nowy obiekt</p>
+        <p className="navigation-p">Nowy obiekt</p>
       </div>
-      <ul className="legenda-linki">
+      <ul className="navigation-links">
         <li>
           <Link to="/mapa" className="nav-bar">
             Mapa
@@ -56,4 +56,4 @@ const Legenda = () => {
   );
 };
 
-export default Legenda;
+export default Navigation;
