@@ -2,7 +2,7 @@ import { Link } from "react-router-dom";
 import objData from "./data.json";
 import BackArrow from "./icons/BackArrow";
 import LocationIcon from "./icons/LocationIcon";
-const GroupObjects = () => {
+const GroupObjects = (): JSX.Element => {
   return (
     <div>
       <BackArrow />
@@ -13,7 +13,7 @@ const GroupObjects = () => {
             <div className="single-object" key={obj.properties.ID}>
               <img
                 className="img-sqr"
-                src={obj.properties.PHOTO}
+                src={obj.properties.MAINIMAGE}
                 alt={obj.properties.NAME}
               ></img>
 

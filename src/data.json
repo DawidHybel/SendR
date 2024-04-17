@@ -12,15 +12,16 @@
         "NAME": "Auto Sierpowa",
         "MODIFIED_D": "2018/01/18",
         "AUTOR": "kuba.nowacki@gmail.com",
-        "PHOTO": "./auto-test.jpg",
-        "PHOTO1": "./lic001.jpg",
-        "PHOTO2": "./lic002.jpg",
-        "PHOTO3": "./lic003.jpg",
-        "PHOTO4": "./lic004.jpg",
-        "PHOTO5": "./lic005.jpg",
-        "PHOTO6": "./lic006.jpg",
+        "MAINIMAGE": "./autoSierpowa.jpg",
+        "PHOTOS": [
+          "./Auto_Sierpowa_1.jpg",
+          "./Auto_Sierpowa_2.jpg",
+          "./Auto_Sierpowa_3.jpg",
+          "./Auto_Sierpowa_4.jpg",
+          "./Auto_Sierpowa_5.jpg"
+        ],
         "ICON": "./AbadonCar.png",
-        "MODEL": "./auto.glb",
+        "MODEL": "./autoSierpowa.glb",
         "INFO": "metus nec fringilla accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget condimentum velit, sit amet feugiat l",
         "CORDINATES": "https://maps.app.goo.gl/QM5Ezx5tRPvrpF988"
       },
@@ -36,21 +37,68 @@
         "NAME": "Rower Azory",
         "MODIFIED_D": "2018/01/18",
         "AUTOR": "kuba.nowacki@gmail.com",
-        "PHOTO": "./rower_azory.jpg",
-        "PHOTO1": "./lic001.jpg",
-        "PHOTO2": "./lic002.jpg",
-        "PHOTO3": "./lic003.jpg",
-        "PHOTO4": "./lic004.jpg",
-        "PHOTO5": "./lic005.jpg",
-        "PHOTO6": "./lic006.jpg",
+        "MAINIMAGE": "./rowerAzory.jpg",
+        "PHOTOS": [
+          "./Rower_Azory_1.jpg",
+          "./Rower_Azory_2.jpg",
+          "./Rower_Azory_3.jpg",
+          "./Rower_Azory_4.jpg"
+        ],
         "ICON": "./NewObject.png",
-        "MODEL": "./rower-azory.glb",
+        "MODEL": "./rowerAzory.glb",
         "INFO": "orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,",
         "CORDINATES": "https://maps.app.goo.gl/H3BggfwVYnTNYSqC6"
       },
       "geometry": {
         "type": "Point",
         "CORDINATES": [50.08946101836022, 19.916087986275308]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 3,
+        "NAME": "Rower Palacha",
+        "MODIFIED_D": "2018/01/18",
+        "AUTOR": "kuba.nowacki@gmail.com",
+        "MAINIMAGE": "./rowerPalacha.jpg",
+        "PHOTOS": [
+          "./Rower_Palacha_1.jpg",
+          "./Rower_Palacha_2.jpg",
+          "./Rower_Palacha_3.jpg",
+          "./Rower_Palacha_4.jpg"
+        ],
+        "ICON": "./abadonBike.png",
+        "MODEL": "./rowerPalacha.glb",
+        "INFO": "orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,",
+        "CORDINATES": "https://maps.app.goo.gl/iBAeXnTNAui4h5Ji7"
+      },
+      "geometry": {
+        "type": "Point",
+        "CORDINATES": [50.088601435956015, 19.916924639043955]
+      }
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "ID": 4,
+        "NAME": "Rower Centrum",
+        "MODIFIED_D": "2018/01/18",
+        "AUTOR": "kuba.nowacki@gmail.com",
+        "MAINIMAGE": "./rowerCentrum.jpg",
+        "PHOTOS": [
+          "./Rower_Centrum_2.jpg",
+          "./Rower_Centrum_3.jpg",
+          "./Rower_Centrum_1.jpg"
+        ],
+        "ICON": "./abadonBike.png",
+        "MODEL": "./rowerCentrum.glb",
+        "INFO": "orem ipsum dolor sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim,",
+        "CORDINATES": "https://maps.app.goo.gl/4wNAjt2Ws3Jo29cP7"
+      },
+      "geometry": {
+        "type": "Point",
+        "CORDINATES": [50.063007, 19.946942]
       }
     }
   ],
@@ -60,7 +108,7 @@
       "ZMIENNE": {
         "ID": 1,
         "TYT": "Ciekawostka 1",
-        "PHOTO": "./lic006.jpg",
+        "PHOTO": "./Rower_Centrum_1.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",
@@ -72,7 +120,7 @@
       "ZMIENNE": {
         "ID": 2,
         "TYT": "Ciekawostka 2",
-        "PHOTO": "./lic006.jpg",
+        "PHOTO": "./Rower_Centrum_1.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",
@@ -84,7 +132,7 @@
       "ZMIENNE": {
         "ID": 3,
         "TYT": "Ciekawostka 3",
-        "PHOTO": "./lic006.jpg",
+        "PHOTO": "./Rower_Centrum_1.jpg",
         "TRESC": "or sit amet, consectetur adipiscing elit. Etiam eu turpis molestie, dictum est a, mattis tellus.",
         "PODTYT": "turpis molestie, tellus.",
         "LICZBA": "24",

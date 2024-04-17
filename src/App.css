@@ -55,84 +55,15 @@ form {
 .hidden {
   display: none;
 }
-#root
-  > div
-  > div:nth-child(2)
-  > div
-  > div.gm-style
-  > div:nth-child(1)
-  > div:nth-child(2)
-  > div
-  > div:nth-child(4)
-  > div
-  > div
-  > div
-  > div.gm-style-iw.gm-style-iw-c {
+div.gm-style-iw.gm-style-iw-c {
   background-color: #1b2330;
-}
-#root
-  > div
-  > div:nth-child(2)
-  > div
-  > div.gm-style
-  > div:nth-child(1)
-  > div:nth-child(2)
-  > div
-  > div:nth-child(4)
-  > div
-  > div
-  > div
-  > div.gm-style-iw.gm-style-iw-c {
   max-width: none !important;
+  max-height: none !important;
 }
-#root
-  > div
-  > div:nth-child(2)
-  > div
-  > div.gm-style
-  > div:nth-child(1)
-  > div:nth-child(2)
-  > div
-  > div:nth-child(4)
-  > div
-  > div
-  > div
-  > div.gm-style-iw.gm-style-iw-c
-  > div {
+.gm-style-iw-d {
   overflow: hidden !important;
-  max-height: none !important;
 }
-#root
-  > div
-  > div:nth-child(2)
-  > div
-  > div.gm-style
-  > div:nth-child(1)
-  > div:nth-child(2)
-  > div
-  > div:nth-child(4)
-  > div
-  > div
-  > div
-  > div.gm-style-iw.gm-style-iw-c {
-  max-height: none !important;
-}
-#root
-  > div
-  > div:nth-child(2)
-  > div
-  > div.gm-style
-  > div:nth-child(1)
-  > div:nth-child(2)
-  > div
-  > div:nth-child(4)
-  > div
-  > div
-  > div
-  > div.gm-style-iw.gm-style-iw-c
-  > div {
-  max-width: none !important;
-}
+
 .marker-button {
   display: flex;
   justify-content: center;
@@ -273,6 +204,10 @@ label {
     gap: 5%;
     flex-direction: column;
   }
+  .side-nav {
+    display: flex;
+    flex-direction: column;
+  }
   .padding-right-extra {
     padding-right: 0 !important;
     margin-bottom: 0 !important;
@@ -384,8 +319,7 @@ label {
     display: block;
   }
 
-  .Navbar,
-  .navigation {
+  .Navbar {
     display: none;
   }
 }
@@ -442,6 +376,7 @@ li:hover {
   flex-direction: row;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  row-gap: 30px;
 }
 .location-marker-photo {
   width: 300px;
@@ -478,6 +413,7 @@ li:hover {
   justify-content: space-evenly;
   gap: 10%;
   align-items: center;
+  flex-wrap: wrap;
 }
 .interestings-two {
   flex-direction: row-reverse;

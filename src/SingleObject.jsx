@@ -7,32 +7,9 @@ import objData from "./data.json";
 import { Link } from "react-router-dom";
 import BackArrow from "./icons/BackArrow";
 import LocationIcon from "./icons/LocationIcon";
-interface ObjectData {
-  properties: {
-    ID: number;
-    NAME: string;
-    MODIFIED_D: string;
-    AUTOR: string;
-    PHOTO: string;
-    PHOTO1: string;
-    PHOTO2: string;
-    PHOTO3: string;
-    PHOTO4: string;
-    PHOTO5: string;
-    PHOTO6: string;
-    ICON: string;
-    MODEL: string;
-    INFO: string;
-    CORDINATES: [number, number];
-    ID: number;
-  };
-  geometry: {
-    CORDINATES: [number, number];
-  };
-}
 const SingleObject = () => {
   const { id } = useParams();
-  const object: ObjectData = objData.features.find(
+  const object = objData.features.find(
     (obj) => String(obj.properties.ID) === id
   );
 
@@ -72,7 +49,7 @@ const SingleObject = () => {
     return <div>Nie znaleziono objectu o ID: {id}</div>;
   }
 
-  function Model(props: any) {
+  function Model(props) {
     const { scene } = useGLTF(object.properties.MODEL);
     return <primitive object={scene} {...props}></primitive>;
   }
@@ -87,10 +64,10 @@ const SingleObject = () => {
   }
 
   return (
-    <div className="parent">
+    <main className="parent">
       <BackArrow />
-      <div className="col-1">
-        <div className="marker-group">
+      <section className="col-1">
+        <header className="marker-group">
           <h1 className=" padding-left-extra padding-right-extra">
             {object.properties.NAME}
           </h1>
@@ -107,7 +84,7 @@ const SingleObject = () => {
               {object.geometry.CORDINATES[1]}
             </p>
           </Link>
-        </div>
+        </header>
         <Canvas
           dpr={[1, 2]}
           shadows
@@ -133,40 +110,18 @@ const SingleObject = () => {
         </Canvas>
         <p className="click-alert">Naciśnij i przytrzymaj, aby przybliżyć</p>
         <p className="object-description"> {object.properties.INFO}</p>
-      </div>
-      <div className="photo-galery" key={object.properties.ID}>
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO1}
-          alt="zdjecie"
-        />
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO2}
-          alt="zdjecie"
-        />
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO3}
-          alt="zdjecie"
-        />
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO4}
-          alt="zdjecie"
-        />
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO5}
-          alt="zdjecie"
-        />
-        <img
-          className="img-sqr small"
-          src={object.properties.PHOTO6}
-          alt="zdjecie"
-        />
-      </div>
-    </div>
+      </section>
+      <figure className="photo-galery">
+        {object.properties.PHOTOS.map((photo, index) => (
+          <img
+            key={index}
+            className="img-sqr small"
+            src={photo}
+            alt="zdjecie"
+          />
+        ))}
+      </figure>
+    </main>
   );
 };
 

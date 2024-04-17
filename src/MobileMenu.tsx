@@ -1,6 +1,6 @@
 import Navigation from "./Navigation";
 import { useState } from "react";
-const MobileMenu = () => {
+const MobileMenu = (): JSX.Element => {
   const [showMenu, setShowMenu] = useState(false);
 
   const toggleMenu = () => {
@@ -8,7 +8,7 @@ const MobileMenu = () => {
   };
 
   return (
-    <div className="side-nav">
+    <nav>
       <div
         className={`hamburger-menu ${showMenu ? "active" : ""}`}
         onClick={toggleMenu}
@@ -47,7 +47,7 @@ const MobileMenu = () => {
       <div className={`mobile-menu ${showMenu ? "show" : ""}`}>
         <Navigation></Navigation>
       </div>
-    </div>
+    </nav>
   );
 };
 
