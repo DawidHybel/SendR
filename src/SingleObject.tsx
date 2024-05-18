@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React, { useEffect, useRef, WheelEvent, useState } from "react";
 import { useParams } from "react-router-dom";
 import { Canvas } from "@react-three/fiber";
 import { useGLTF, Stage, PresentationControls, Html } from "@react-three/drei";
@@ -7,11 +7,40 @@ import objData from "./data.json";
 import { Link } from "react-router-dom";
 import BackArrow from "./icons/BackArrow";
 import LocationIcon from "./icons/LocationIcon";
+
 const SingleObject = () => {
   const { id } = useParams();
+  const [scale, setScale] = useState(100);
   const object = objData.features.find(
     (obj) => String(obj.properties.ID) === id
   );
+
+  const canvasRef = useRef(null);
+
+  // useRef
+  useEffect(() => {
+    const canvas = canvasRef.current;
+
+    if (!canvas) {
+      return;
+    }
+
+    const handleMouseWheel = (event: WheelEvent<HTMLCanvasElement>) => {
+      setScale((state) => {
+        let newScale = state - event.deltaY;
+        if (newScale <= 0) {
+          newScale = 100;
+        }
+        return newScale;
+      });
+    };
+
+    canvas.addEventListener("mousewheel", handleMouseWheel);
+
+    return () => {
+      canvas.removeEventListener("mousewheel", handleMouseWheel);
+    };
+  }, []);
 
   useEffect(() => {
     if (!object) {
@@ -46,7 +75,14 @@ const SingleObject = () => {
   }, [object]);
 
   if (!object) {
-    return <div>Nie znaleziono objectu o ID: {id}</div>;
+    return (
+      <div className="nopage">
+        <h1>Nie znaleziono objectu o ID: {id}</h1>
+        <Link className="group-objects-button" to={`/mapa/`}>
+          Zacznij od nowa
+        </Link>
+      </div>
+    );
   }
 
   function Model(props) {
@@ -61,6 +97,24 @@ const SingleObject = () => {
         <p>Wczytywanie</p>
       </Html>
     );
+  }
+  function handlemouseadd() {
+    setScale((state) => {
+      let newScale = state + 100;
+      if (newScale <= 0) {
+        newScale = 100;
+      }
+      return newScale;
+    });
+  }
+  function handlemousesub() {
+    setScale((state) => {
+      let newScale = state - 100;
+      if (newScale <= 0) {
+        newScale = 100;
+      }
+      return newScale;
+    });
   }
 
   return (
@@ -85,30 +139,50 @@ const SingleObject = () => {
             </p>
           </Link>
         </header>
-        <Canvas
-          dpr={[1, 2]}
-          shadows
-          camera={{ fov: 30 }}
-          style={{
-            height: "80vh",
-            width: "auto",
-            padding: "0px 20px 20px 20px",
-          }}
-        >
-          <Suspense fallback={<Loader />}>
-            <PresentationControls
-              speed={1.5}
-              global
-              zoom={3}
-              polar={[-0.1, Math.PI / 4]}
-            >
-              <Stage>
-                <Model scale={0.12}></Model>
-              </Stage>
-            </PresentationControls>
-          </Suspense>
-        </Canvas>
-        <p className="click-alert">Naciśnij i przytrzymaj, aby przybliżyć</p>
+        <div>
+          <Canvas
+            onMouseOver={() => {
+              document.body.style.overflow = "hidden";
+            }}
+            onMouseOut={() => {
+              document.body.style.overflow = "";
+            }}
+            dpr={[1, 2]}
+            shadows
+            camera={{ fov: 30 }}
+            style={{
+              height: "80vh",
+              width: "auto",
+              padding: "0px 20px 20px 20px",
+            }}
+            ref={canvasRef}
+          >
+            <Suspense fallback={<Loader />}>
+              <PresentationControls
+                speed={1.5}
+                global
+                zoom={3}
+                polar={[-0.1, Math.PI / 4]}
+              >
+                <Stage>
+                  <Model scale={scale}></Model>
+                </Stage>
+              </PresentationControls>
+            </Suspense>
+          </Canvas>
+          <div className="zoom-button-object-group">
+            <button className="zoom-button-object" onClick={handlemouseadd}>
+              +
+            </button>
+            <button className="zoom-button-object" onClick={handlemousesub}>
+              {" "}
+              -{" "}
+            </button>
+          </div>
+        </div>
+        <p className="click-alert">
+          Naciśnij i przytrzymaj, aby przybliżyć lub użyj scrolla
+        </p>
         <p className="object-description"> {object.properties.INFO}</p>
       </section>
       <figure className="photo-galery">

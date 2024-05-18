@@ -7,7 +7,7 @@ import SingleObject from "./SingleObject";
 import GroupObjects from "./GroupObjects";
 import Interestings from "./Interestings";
 import Form from "./Form";
-
+import Nopage from "./404";
 function Home() {
   return (
     <div>
@@ -55,6 +55,7 @@ function App() {
         <Route path="galeria-obiektow/:id" element={<SingleObject />} />
         <Route path="ciekawostki" element={<Interestings />} />
         <Route path="dodaj-swoj-obiekt" element={<Form />} />
+        <Route path="*" element={<Nopage />} />
       </Routes>
     </Router>
   );
